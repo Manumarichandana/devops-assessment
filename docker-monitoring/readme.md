@@ -138,13 +138,6 @@ docker-compose down
  
 ## Keypoints
  
-### objective1 - keypoints
- 
-- The `ec2` module is fully reusable, any project can import it with different variable values. Root module handles project-specific configuration only.
-- I have included validations in variable definitions to prevent accidental deployment to unsupported regions or instance types.
-- Using `data "aws_ami"` block ensures the latest patched Amazon Linux 2 AMI is always used rather than a hardcoded, potentially outdated AMI.
-- Fully automated provisioning, no manual SSH required after `terraform apply`.
- 
 ### objective2 - keypoints
  
 - The chosen node 18 alpine image is significantly smaller than the standard Node image, image pull time, and storage cost.
