@@ -109,11 +109,11 @@ Internet
 
 ### Prerequisites
 
-| Requirement | Version | Notes |
-|-------------|---------|-------|
-| Terraform | ≥ 1.0 | [Install guide](https://developer.hashicorp.com/terraform/install) |
-| AWS CLI | ≥ 2.0 | [Install guide](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) |
-| AWS Account | Free tier | Ensure credentials are configured |
+| Requirement | Version |
+|-------------|---------|
+| Terraform   | ≥ 1.0   |
+| AWS CLI | ≥ 2.0       |
+| AWS Account | Free tier |
 
 Configure AWS credentials:
 ```bash
