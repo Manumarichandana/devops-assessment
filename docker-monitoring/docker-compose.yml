@@ -1,0 +1,46 @@
+services:
+ 
+  app:
+    build: ./app
+    container_name: sample-app
+    ports:
+      - "${APP_PORT}:3000"
+    restart: unless-stopped
+ 
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+      - "${CADVISOR_PORT}:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    restart: unless-stopped
+ 
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "${PROMETHEUS_PORT}:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    restart: unless-stopped
+ 
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "${GRAFANA_PORT}:3000"
+    volumes:
+      # Datasource provisioning
+      - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml:ro
+      # Dashboard provider config
+      - ./grafana/dashboard.yml:/etc/grafana/provisioning/dashboards/dashboard.yml:ro
+      # Actual dashboards
+      - ./grafana/docker-dashboard.json:/var/lib/grafana/dashboards/docker-dashboard.json:ro
+ 
+    depends_on:
+      - prometheus
+    restart: unless-stopped
