@@ -1,9 +1,5 @@
 #  DevOps Assessment – Spectrum Life
 
-> **Author:** Sai Chandana  
-> **Role Applied For:** DevOps Engineer  
-> **Submitted:** March 2026
-
 ---
 
 ## Table of Contents
@@ -16,16 +12,17 @@
   - [Quick Start](#quick-start)
   - [Configuration Reference](#configuration-reference)
   - [Endpoints](#endpoints)
-  - [Teardown](#teardown)
+  - [How to destroy](#how-to-destroy)
 - [Objective 2 – Docker + Monitoring Stack](#objective-2--docker--monitoring-stack)
   - [Architecture](#architecture-1)
   - [Prerequisites](#prerequisites-1)
   - [Quick Start](#quick-start-1)
   - [Accessing Services](#accessing-services)
   - [Grafana Dashboard](#grafana-dashboard)
-  - [Teardown](#teardown-1)
-- [Design Decisions](#design-decisions)
-- [Troubleshooting](#troubleshooting)
+  - [teardown](#teardown)
+- [Keypoints](#keypoints)
+- [Screenshots](#screenshots)
+
 
 ---
 
