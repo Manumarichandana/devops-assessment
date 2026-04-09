@@ -1,285 +1,143 @@
 {
-
   "annotations": {
-
     "list": [
-
       {
-
         "builtIn": 1,
-
         "datasource": {
-
           "type": "grafana",
-
           "uid": "-- Grafana --"
-
         },
-
         "enable": true,
-
         "hide": true,
-
         "iconColor": "rgba(0, 211, 255, 1)",
-
         "name": "Annotations & Alerts",
-
         "type": "dashboard"
-
       }
-
     ]
-
   },
-
   "editable": true,
-
   "fiscalYearStartMonth": 0,
-
   "graphTooltip": 0,
-
   "id": null,
-
   "links": [],
-
   "liveNow": false,
-
   "panels": [
-
     {
-
       "datasource": {
-
         "type": "prometheus",
-
         "uid": "grafana"
-
       },
-
       "fieldConfig": {
-
         "defaults": {
-
           "unit": "percentunit"
-
         },
-
         "overrides": []
-
       },
-
       "gridPos": {
-
         "h": 8,
-
         "w": 24,
-
         "x": 0,
-
         "y": 0
-
       },
-
       "id": 1,
-
       "options": {
-
         "legend": {
-
           "displayMode": "list",
-
           "placement": "bottom"
-
         }
-
       },
-
       "targets": [
-
         {
-
           "expr": "sum by (name) (rate(container_cpu_usage_seconds_total{name!=\"\"}[1m])) * 100",
           "legendFormat": "{{name}}",
-
           "refId": "A"
-
         }
-
       ],
-
       "title": "CPU Usage",
-
       "type": "timeseries"
-
     },
-
     {
-
       "datasource": {
-
         "type": "prometheus",
-
         "uid": "grafana"
-
       },
-
       "fieldConfig": {
-
         "defaults": {
-
           "unit": "bytes"
-
         },
-
         "overrides": []
-
       },
-
       "gridPos": {
-
         "h": 8,
-
         "w": 24,
-
         "x": 0,
-
         "y": 8
-
       },
-
       "id": 2,
-
       "options": {
-
         "legend": {
-
           "displayMode": "list",
-
           "placement": "bottom"
-
         }
-
       },
-
       "targets": [
-
         {
-
           "expr": "container_memory_usage_bytes",
-
           "legendFormat": "{{name}}",
-
           "refId": "A"
-
         }
-
       ],
-
       "title": "Memory Usage",
-
       "type": "timeseries"
-
     },
-
     {
-
       "datasource": {
-
         "type": "prometheus",
-
         "uid": "grafana"
-
       },
-
       "fieldConfig": {
-
         "defaults": {},
-
         "overrides": []
-
       },
-
       "gridPos": {
-
         "h": 8,
-
         "w": 24,
-
         "x": 0,
-
         "y": 16
-
       },
-
       "id": 3,
-
       "options": {
-
         "showHeader": true
-
       },
-
       "targets": [
-
         {
-
           "expr": "container_last_seen",
-
           "format": "table",
-
           "instant": true,
-
           "refId": "A"
-
         }
-
       ],
-
       "title": "Container Status",
-
       "transformations": [],
-
       "type": "table"
-
     }
-
   ],
-
   "refresh": "5s",
-
   "schemaVersion": 39,
-
   "style": "dark",
-
   "tags": [
-
     "docker",
-
     "monitoring"
-
   ],
-
   "templating": {
-
     "list": []
-
   },
-
   "time": {
-
     "from": "now-15m",
-
     "to": "now"
-
   },
-
   "timezone": "browser",
-
   "title": "Docker Container Monitoring",
-
   "version": 1,
-
   "weekStart": ""
-
 }
- 
